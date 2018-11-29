@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Slim 3</title>
+        <title><?php echo($_ENV['APP_NAME']); ?></title>
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <style>
             body {
@@ -26,13 +26,8 @@
         </style>
     </head>
     <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
-
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
+        <h1><?php echo($_ENV['APP_NAME']); ?></h1>
+        <div>Interface pour le fonctionnement du site</div>
+        <p>Retrouvez nous sur <a href="http://legipix.net/">legipix.net</a></p>
     </body>
 </html>
