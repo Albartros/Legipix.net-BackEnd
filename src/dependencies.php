@@ -28,3 +28,15 @@ $container['db'] = function ($container) {
 
     return $capsule;
 };
+
+// Controllers
+$container[Blog\AuthorController::class] = function ($c) {
+    $logger = $c->get('logger');
+    $table = $c->get('db')->table('table_name');
+    return new Blog\AuthorController($logger, $table);
+};
+$container[Game\CodeController::class] = function ($c) {
+    $logger = $c->get('logger');
+    $table = $c->get('db')->table('table_name');
+    return new Game\CodeController($logger, $table);
+};
