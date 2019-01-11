@@ -32,9 +32,10 @@ final class CodeController
 
     public function sumCodeViews($request, $response, $params)
     {
-        $views = Code::all()->sum('views');
+        $sequencesOfSix = Code::whereRaw('LENGTH(id) = 6')->get()->count();
+        $sequencesOfSeven = Code::whereRaw('LENGTH(id) = 7')->get()->count();
 
-        $content = array('status' => '200', 'code' => 'OK', 'title' => 'Total Counts', 'value' => $views);
+        $content = array('status' => '200', 'code' => 'OK', 'title' => 'Sequence Counts', 'sequences_6' => $sequencesOfSix, 'sequences_7' => $sequencesOfSeven);
         return $response->withJSON(
             $content
         );
