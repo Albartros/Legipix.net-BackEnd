@@ -11,3 +11,4 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/code/count', 'Game\CodeController:sumCodeViews');
 $app->get('/code/{id}', 'Game\CodeController:getCode');
+
